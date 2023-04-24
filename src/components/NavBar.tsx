@@ -8,7 +8,7 @@ const NavBar = () => {
            <h1 className={styles.logo}>Expenses</h1> 
         </Link>
         <Link href={'/dashboard'}>
-        <button className={styles.button}>Get Started</button>
+        <button className={styles.button}>Dashboard</button>
         </Link>
     </nav>
   )
