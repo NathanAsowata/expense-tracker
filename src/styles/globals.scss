@@ -1,6 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Inter&display=swap');
+@import 'partials';
 
 *, *::before, *::after{
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  margin: 0px;
+}
+
+.main{
+  min-height: 95vh;
+  background-color: $light;
 }
