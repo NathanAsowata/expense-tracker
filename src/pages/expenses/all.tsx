@@ -31,9 +31,9 @@ const AllExpenses = () => {
     <h1 className={styles.heading}>All expenses</h1>
     <main className={styles.table}>
     <div className={styles.row}>
-        <span>Amount</span>
-        <span>Category</span>
-        <span>Decription</span>
+        <span className={styles.column}>Amount</span>
+        <span className={styles.column}>Category</span>
+        <span className={styles.column}>Description</span>
     </div>
     {expenses.map(item => {
         return(
