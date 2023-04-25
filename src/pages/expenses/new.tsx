@@ -3,26 +3,33 @@ import styles from '../../styles/NewExpenses.module.scss'
 import { FormEvent, useState } from "react"
 import { db } from '../../firebase/Config'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { useRouter } from "next/router"
 
 const NewExpenses = () => {
 
+    const router = useRouter()
     const [category, setCategory] = useState('');
     const [amount, setAmount]  = useState('');
     const [description, setDescription] = useState('');
 
+    // this function adds the new expense to the database
    const addExpense = async (e:FormEvent) => {
+    // prevent the page from reloading
     e.preventDefault()
 
     try {
+        // add the user input to the database
         const docRef = await addDoc(collection(db, "expenses"), {
             amount: amount,
             category: category,
             date: serverTimestamp(),
             description: description
         });
-
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
+        // if successful, redirect user to the dashboard
+        router.push('/dashboard');
+      } 
+    //   if there is an error, log the error to the console
+      catch (e) {
         console.error("Error adding document: ", e);
       }
    }
@@ -34,17 +41,17 @@ const NewExpenses = () => {
             <link rel="shortcut icon" href="icon.jpg" type="image/x-icon" />
         </Head>
         <div className={styles.container}>
-        
         <form className={styles.form} onSubmit={addExpense}>
 
             <h2>Add a New Expense</h2>
             <label htmlFor="category">Select a category</label>
             <br />
             <select 
-                name="category" 
+                id="category" 
                 className={styles.formField} 
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
+                data-testid="category"
                 required
             >
                 <option value="miscellaneous">Miscellaneous</option>
@@ -61,7 +68,7 @@ const NewExpenses = () => {
             <label htmlFor="amount"> Amount </label>
             <br />
             <input 
-                name="amount" 
+                id="amount" 
                 type="number" 
                 className={styles.formField} 
                 value={amount}
@@ -72,7 +79,8 @@ const NewExpenses = () => {
             <label htmlFor="description">Description</label>
             <br />
             <textarea 
-                name="description" 
+                name="description"
+                id="description" 
                 cols={30} 
                 rows={10} 
                 className={styles.formField} 
