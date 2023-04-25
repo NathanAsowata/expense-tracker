@@ -34,9 +34,10 @@ const NewExpenses = () => {
             <link rel="shortcut icon" href="icon.jpg" type="image/x-icon" />
         </Head>
         <div className={styles.container}>
-            <h1>Add a new expense</h1>
         
         <form className={styles.form} onSubmit={addExpense}>
+
+            <h2>Add a New Expense</h2>
             <label htmlFor="category">Select a category</label>
             <br />
             <select 

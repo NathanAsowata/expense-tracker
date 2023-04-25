@@ -1,20 +1,20 @@
 @import 'partials';
 
 .container{
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
-    h1{
-        color: $dark;
-        font-weight: 500;
-    }
 }
 .form{
     margin-top: 20px;
-    padding: 50px 25px;
+    padding: 20px 25px;
     box-shadow: 2px 2px 5px $dark;
     border-top: 5px solid $accent;
     border-radius: 8px;
+    h2{
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
     label{
         font-weight: 600;
     }
