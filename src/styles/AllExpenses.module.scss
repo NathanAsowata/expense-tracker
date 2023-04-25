@@ -1,0 +1,35 @@
+@import "partials";
+
+.heading{
+    font-weight: 500;
+    margin-top: 50px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.table{
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+.row{
+    display: flex;
+    background-color: $accent;
+    box-shadow: 5px 5px 8px $dark;
+    overflow: hidden;
+    &:nth-child(2n) {
+        background-color: #ddddfd;
+    }
+    span{
+        width: 250px;
+        padding: 10px;
+    }
+}
+
+.column{
+    font-weight: 600;
+    font-size: 18px;
+}
+.category{
+    text-transform: capitalize;
+}

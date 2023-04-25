@@ -11,6 +11,10 @@ const Dashboard = () => {
       <Link href={'/expenses/new'}> 
         <button>Add New Expenses</button> 
       </Link>
+      <br />
+      <Link href={'/expenses/all'}> 
+        <button>View all expenses</button> 
+      </Link>
     </>
   )
 }
