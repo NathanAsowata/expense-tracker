@@ -1,0 +1,53 @@
+@import 'partials';
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    margin-top: 20px;
+    padding: 20px 25px;
+    box-shadow: 2px 2px 5px $dark;
+    border-top: 5px solid $accent;
+    border-radius: 8px;
+    h2{
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    label{
+        font-weight: 600;
+    }
+    select, input{
+        border: none;
+        border-bottom: 1px solid $dark;
+        margin-top: 5px;
+    }
+    select, input{
+        width: 240px;
+        &:focus{
+            outline: none;
+            border-bottom: 2px solid $accent;
+        }
+    }
+    textarea:focus{
+        outline: none;
+        border: 2px solid $accent;
+    }
+    button{
+        color: $light;
+        background-color: $dark;
+        padding: 5px;
+        border-radius: 4px;
+        &:hover{
+            background-color: $accent;
+            border-color: $accent;
+        }
+        &:active{
+            padding: 4px;
+        }
+    }
+}
+.formField{
+    margin-bottom: 20px;
+}
