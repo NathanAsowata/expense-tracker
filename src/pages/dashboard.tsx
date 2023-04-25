@@ -1,7 +1,17 @@
+import Head from "next/head"
+import Link from "next/link"
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <>
+      <Head>
+        <title>Dashboard - Expenses</title>
+        <link rel="shortcut icon" href="icon.jpg" type="image/x-icon" />
+      </Head>
+      <Link href={'/expenses/new'}> 
+        <button>Add New Expenses</button> 
+      </Link>
+    </>
   )
 }
 
