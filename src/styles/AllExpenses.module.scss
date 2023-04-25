@@ -20,6 +20,9 @@
     }
     span{
         width: 250px;
-        height: 40px;
+        min-height: 40px;
     }
+}
+.category{
+    text-transform: capitalize;
 }

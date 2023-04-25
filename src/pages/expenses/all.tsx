@@ -38,8 +38,8 @@ const AllExpenses = () => {
     {expenses.map(item => {
         return(
             <div key={item.id} className={styles.row}>
-                <span>{item.amount}</span>
-                <span>{item.category}</span>
+                <span>{item.amount.toLocaleString()}</span>
+                <span className={styles.category}>{item.category.replace(/-/g, " ")}</span>
                 <span>{item.description}</span>
             </div>
         )
